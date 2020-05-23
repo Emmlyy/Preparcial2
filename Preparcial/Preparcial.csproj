@@ -49,17 +49,11 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Admin.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Admin.Designer.cs">
-          <DependentUpon>Admin.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Administrador.cs">
+        <Compile Include="AdmiMenu.cs">
           <SubType>UserControl</SubType>
         </Compile>
-        <Compile Include="Administrador.Designer.cs">
-          <DependentUpon>Administrador.cs</DependentUpon>
+        <Compile Include="AdmiMenu.Designer.cs">
+          <DependentUpon>AdmiMenu.cs</DependentUpon>
         </Compile>
         <Compile Include="CrearUsuario.cs">
           <SubType>UserControl</SubType>
@@ -99,17 +93,26 @@
         </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="UserCliente.cs">
+        <Compile Include="UserAdmi.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="UserAdmi.Designer.cs">
+          <DependentUpon>UserAdmi.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Clientemenu.cs">
           <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="Clientemenu.Designer.cs">
+          <DependentUpon>Clientemenu.cs</DependentUpon>
+        </Compile>
+        <Compile Include="UserCliente.cs">
+          <SubType>Form</SubType>
         </Compile>
         <Compile Include="UserCliente.Designer.cs">
           <DependentUpon>UserCliente.cs</DependentUpon>
         </Compile>
-        <EmbeddedResource Include="Admin.resx">
-          <DependentUpon>Admin.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Administrador.resx">
-          <DependentUpon>Administrador.cs</DependentUpon>
+        <EmbeddedResource Include="AdmiMenu.resx">
+          <DependentUpon>AdmiMenu.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="CrearUsuario.resx">
           <DependentUpon>CrearUsuario.cs</DependentUpon>
@@ -138,6 +141,12 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="UserAdmi.resx">
+          <DependentUpon>UserAdmi.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Clientemenu.resx">
+          <DependentUpon>Clientemenu.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="UserCliente.resx">
           <DependentUpon>UserCliente.cs</DependentUpon>
         </EmbeddedResource>

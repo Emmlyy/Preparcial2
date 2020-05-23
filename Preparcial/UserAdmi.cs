@@ -2,9 +2,9 @@
 
 namespace Preparcial
 {
-    public partial class UserCliente : Form
+    public partial class UserAdmi : Form
     {
-        public UserCliente()
+        public UserAdmi()
         {
             InitializeComponent();
         }

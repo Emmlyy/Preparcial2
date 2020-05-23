@@ -20,18 +20,15 @@ namespace Preparcial
 
     private void ButtonIngresar_Click(object sender, EventArgs e)
     {
+       
         //Revisar en la Base de datos
         //Si existe obtener el dato booleano de Admi
         /*if(Admi==true){
-            tableLayoutPanel1.Controls.Remove(LoginUser);
-            current = new Admin();
-            tableLayoutPanel1.Controls.Add(current,0,1);
-            tableLayoutPanel1.SetColumnSpan(current,2);
+            ocultar ventana form1
+            mistrar ventana UserAdmi
          }else{
-            tableLayoutPanel1.Controls.Remove(LoginUser);
-            current = new UserCliente();
-            tableLayoutPanel1.Controls.Add(current,0,1);
-            tableLayoutPanel1.SetColumnSpan(current,2);
+            ocultar ventana form1
+            mostrar ventana userCliente
          }
          */
     }
