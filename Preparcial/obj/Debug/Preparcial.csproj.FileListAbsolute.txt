@@ -16,3 +16,10 @@ C:\Users\MORIS\Desktop\Portafolio\Portafolio_MJJP_00018619_POO-0120\Preparcial\o
 C:\Users\MORIS\Desktop\Portafolio\Portafolio_MJJP_00018619_POO-0120\Preparcial\obj\Debug\Preparcial.pdb
 C:\Users\MORIS\Desktop\Portafolio\Portafolio_MJJP_00018619_POO-0120\Preparcial\obj\Debug\Preparcial.csproj.CopyComplete
 C:\Users\MORIS\Desktop\Portafolio\Portafolio_MJJP_00018619_POO-0120\Preparcial\obj\Debug\Preparcial.loginaAdmin.resources
+C:\Users\Emely Paola\Documents\UCA\2020\POO\preparcial\Preparcial2\Preparcial\bin\Debug\Preparcial.exe.config
+C:\Users\Emely Paola\Documents\UCA\2020\POO\preparcial\Preparcial2\Preparcial\bin\Debug\Preparcial.pdb
+C:\Users\Emely Paola\Documents\UCA\2020\POO\preparcial\Preparcial2\Preparcial\obj\Debug\Preparcial.csprojAssemblyReference.cache
+C:\Users\Emely Paola\Documents\UCA\2020\POO\preparcial\Preparcial2\Preparcial\obj\Debug\Preparcial.csproj.CoreCompileInputs.cache
+C:\Users\Emely Paola\Documents\UCA\2020\POO\preparcial\Preparcial2\Preparcial\obj\Debug\Preparcial.exe
+C:\Users\Emely Paola\Documents\UCA\2020\POO\preparcial\Preparcial2\Preparcial\obj\Debug\Preparcial.pdb
+C:\Users\Emely Paola\Documents\UCA\2020\POO\preparcial\Preparcial2\Preparcial\obj\Debug\Preparcial.csproj.CopyComplete

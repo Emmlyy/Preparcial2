@@ -12,27 +12,28 @@ namespace Preparcial
 {
   public partial class Form1 : Form
   {
-      private UserControl current ;
+      private UserControl current = null;
     public Form1()
         {
             InitializeComponent();
-            
         }
 
-    private void button1_Click(object sender, EventArgs e)
+    private void ButtonIngresar_Click(object sender, EventArgs e)
     {
-       this.Hide();
-       loginaAdmin ventana = new loginaAdmin();
-       
-       ventana.Show();
-
-    }
-
-    private void button2_Click(object sender, EventArgs e)
-    {
-        this.Hide();
-        Cliente ventana2 = new Cliente();
-        ventana2.Show();
+        //Revisar en la Base de datos
+        //Si existe obtener el dato booleano de Admi
+        /*if(Admi==true){
+            tableLayoutPanel1.Controls.Remove(LoginUser);
+            current = new Admin();
+            tableLayoutPanel1.Controls.Add(current,0,1);
+            tableLayoutPanel1.SetColumnSpan(current,2);
+         }else{
+            tableLayoutPanel1.Controls.Remove(LoginUser);
+            current = new UserCliente();
+            tableLayoutPanel1.Controls.Add(current,0,1);
+            tableLayoutPanel1.SetColumnSpan(current,2);
+         }
+         */
     }
   }
 }
