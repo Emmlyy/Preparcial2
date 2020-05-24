@@ -22,7 +22,27 @@ namespace Preparcial
     {
        
         //Revisar en la Base de datos
-        //Si existe obtener el dato booleano de Admi
+        
+        Usuario us=new Usuario();
+        us.Nombre = textBoxName.Text;
+        us.Contra = textBoxContra.Text;
+        if (Admi.Checked) us.Admi = true;
+        else us.Admi = false;
+
+        if (ConsultasUsuario.ExisteUsuario(us))
+        {//Si existe obtener el dato booleano de Admi
+            //ocultar ventana form
+            if (us.Admi)
+            {
+               // new UserAdmi(us)
+            }
+            else
+            {
+                //UserCliente.
+            }
+        }
+        
+        
         /*if(Admi==true){
             ocultar ventana form1
             mistrar ventana UserAdmi
