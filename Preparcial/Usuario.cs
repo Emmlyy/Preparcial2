@@ -1,4 +1,6 @@
-﻿namespace Preparcial
+﻿using System.Windows.Forms;
+
+namespace Preparcial
 {
     public class Usuario
     {
@@ -8,7 +10,10 @@
         public bool Admi { get; set; }
         public int IdUsuario { get; set; }
 
-        public Usuario() { }
+        public Usuario()
+        {
+            
+        }
 
         public Usuario(int idUsuario,string nombre, string contra , bool admi)
         {
@@ -16,6 +21,9 @@
             this.Nombre = nombre;
             this.Contra = contra;
             this.Admi = admi;
+
         }
+
+        
     }
 }

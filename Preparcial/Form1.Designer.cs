@@ -33,11 +33,11 @@
             this.LoginUser = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxContra = new System.Windows.Forms.TextBox();
             this.Admi = new System.Windows.Forms.RadioButton();
             this.Cliente = new System.Windows.Forms.RadioButton();
             this.ButtonIngresar = new System.Windows.Forms.Button();
+            this.textnombre = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.LoginUser.SuspendLayout();
             this.SuspendLayout();
@@ -64,11 +64,11 @@
             this.LoginUser.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.LoginUser.Controls.Add(this.label1, 0, 1);
             this.LoginUser.Controls.Add(this.label2, 0, 2);
-            this.LoginUser.Controls.Add(this.textBoxName, 1, 1);
             this.LoginUser.Controls.Add(this.textBoxContra, 1, 2);
             this.LoginUser.Controls.Add(this.Admi, 0, 3);
             this.LoginUser.Controls.Add(this.Cliente, 1, 3);
             this.LoginUser.Controls.Add(this.ButtonIngresar, 0, 4);
+            this.LoginUser.Controls.Add(this.textnombre, 1, 1);
             this.LoginUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoginUser.Location = new System.Drawing.Point(3, 52);
             this.LoginUser.Name = "LoginUser";
@@ -103,14 +103,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Contrasenia:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxName.Location = new System.Drawing.Point(348, 37);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(114, 20);
-            this.textBoxName.TabIndex = 2;
             // 
             // textBoxContra
             // 
@@ -160,6 +152,14 @@
             this.ButtonIngresar.UseVisualStyleBackColor = true;
             this.ButtonIngresar.Click += new System.EventHandler(this.ButtonIngresar_Click);
             // 
+            // textnombre
+            // 
+            this.textnombre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textnombre.Location = new System.Drawing.Point(346, 37);
+            this.textnombre.Name = "textnombre";
+            this.textnombre.Size = new System.Drawing.Size(118, 20);
+            this.textnombre.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,7 +183,7 @@
         private System.Windows.Forms.TableLayoutPanel LoginUser;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox textBoxContra;
-        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textnombre;
 
         #endregion
     }

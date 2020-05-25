@@ -198,6 +198,7 @@ namespace Preparcial
             this.btnAlmacenarPedido.TabIndex = 18;
             this.btnAlmacenarPedido.Text = "Almacenar Pedido";
             this.btnAlmacenarPedido.UseVisualStyleBackColor = true;
+            this.btnAlmacenarPedido.Click += new System.EventHandler(this.btnAlmacenarPedido_Click);
             // 
             // label15
             // 
@@ -215,6 +216,7 @@ namespace Preparcial
             this.cmbProductoPedido.Name = "cmbProductoPedido";
             this.cmbProductoPedido.Size = new System.Drawing.Size(135, 21);
             this.cmbProductoPedido.TabIndex = 15;
+            this.cmbProductoPedido.SelectedIndexChanged += new System.EventHandler(this.cmbProductoPedido_SelectedIndexChanged);
             // 
             // label10
             // 

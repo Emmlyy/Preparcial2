@@ -23,3 +23,19 @@ C:\Users\Emely Paola\Documents\UCA\2020\POO\preparcial\Preparcial2\Preparcial\ob
 C:\Users\Emely Paola\Documents\UCA\2020\POO\preparcial\Preparcial2\Preparcial\obj\Debug\Preparcial.exe
 C:\Users\Emely Paola\Documents\UCA\2020\POO\preparcial\Preparcial2\Preparcial\obj\Debug\Preparcial.pdb
 C:\Users\Emely Paola\Documents\UCA\2020\POO\preparcial\Preparcial2\Preparcial\obj\Debug\Preparcial.csproj.CopyComplete
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\bin\Debug\Preparcial.exe.config
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\bin\Debug\Preparcial.pdb
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\bin\Debug\Npgsql.dll
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\bin\Debug\Npgsql.xml
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\obj\Debug\Preparcial.csprojAssemblyReference.cache
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\obj\Debug\Preparcial.Form1.resources
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\obj\Debug\Preparcial.Properties.Resources.resources
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\obj\Debug\Preparcial.UserAdmi.resources
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\obj\Debug\Preparcial.UserCliente.resources
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\obj\Debug\Preparcial.csproj.GenerateResource.cache
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\obj\Debug\Preparcial.csproj.CoreCompileInputs.cache
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\obj\Debug\Preparcial.csproj.CopyComplete
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\obj\Debug\Preparcial.exe
+C:\Users\MORIS\Desktop\emmm\Preparcial2\Preparcial\obj\Debug\Preparcial.pdb
