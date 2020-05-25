@@ -7,30 +7,48 @@ namespace Preparcial
     public partial class UserCliente : Form
     {
         private Inventario inv2;
+        private Usuario user=new Usuario();
         private Pedido pet = new Pedido();
         public UserCliente(Usuario u)
         {
             InitializeComponent();
-            actualizarTabla(u);
+            actualizar();
+            user = u;
         }
         
-        private void actualizarTabla(Usuario u)
+        private void actualizar()
         {
             dataGridView1.DataSource = null;
-            //dataGridView1.DataSource = ConsultasPedido.PedidodeUsuario(necesita el id);
+            dataGridView1.DataSource = ConsultasPedido.PedidodeUsuario(user);
+            
+            cmbProductoPedido.DataSource = null;
+            cmbProductoPedido.ValueMember = "idpedido";
+            cmbProductoPedido.DisplayMember = "Nombre";
+            cmbProductoPedido.DataSource = ConsultasInventario.GetListaInventario();
+
+            lblNombre.Text = user.Nombre;
+            lbContra.Text = user.Contra;
+
         }
 
 
         private void cmbProductoPedido_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void btnAlmacenarPedido_Click(object sender, EventArgs e)
         {
-            pet.IdPedido = cmbProductoPedido.SelectionLength;
-            ConsultasPedido.AgregarPedido(pet);
             
+            Inventario p = (Inventario) cmbProductoPedido.SelectedItem;
+                
+            ConsultasPedido.AgregarPedido(user, p, tbCant.Text);
+                
+            MessageBox.Show("Pedido agregado exitosamente", "Clase GUI 04",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            // Actualizar el data grid view (la tabla)
+            actualizar();
         }
     }
 }

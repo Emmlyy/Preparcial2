@@ -23,59 +23,46 @@ namespace Preparcial
     private void ButtonIngresar_Click(object sender, EventArgs e)
     {
         try
-        {if (Encriptador.CompararMD5(textBoxContra.Text, textnombre.ToString()))
+        {if (Encriptador.CompararMD5(textBoxContra.Text,comboBox1.SelectedValue.ToString()))
             {
-            
-                Usuario us=new Usuario();
-                us.Nombre = textnombre.Text;
-                us.Contra = textBoxContra.Text;
-                if (Admi.Checked) us.Admi = true;
-                else us.Admi = false;
-                if (ConsultasUsuario.ExisteUsuario(us))
+
+            Usuario us = (Usuario) comboBox1.SelectedItem;
+                
+                string Contra = Encriptador.CrearMD5(textBoxContra.Text);
+                bool admi;
+                if (Admi.Checked) admi = true;
+                else admi = false;
+                if (ConsultasUsuario.ExisteUsuario(us, Contra, admi))
                 {//Si existe obtener el dato booleano de Admi
                     //ocultar ventana form
                     if (us.Admi)
                     {
-                        new UserAdmi(us);
+                        
+                        UserAdmi form = new UserAdmi(us);
+                        form.Show(this);
+                        this.Hide();
+                        
                     }
                     else
                     {
-                        new UserCliente(us);
+                       
+                        UserCliente form = new UserCliente(us);
+                        form.Show(this);
+                        this.Hide();
                     }
                 }
-                if(us.Admi)
+                else
                 {
-                    SesionDB.iniciarSesion(us.Nombre);
-                    MessageBox.Show("¡Bienvenido!", 
-                        "Administrador", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    UserAdmi ventanAdmi = new UserAdmi(us);
-                    ventanAdmi.Show();
-                    this.Hide();
+                    MessageBox.Show("no existe el Usuario o algun dato esta malo");
                 }
-                else{
-                    
-                    MessageBox.Show("¡Bienvenido!", 
-                        "Administrador", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    UserCliente ventanCliente = new UserCliente(us);
-                    ventanCliente.Show();
-                    this.Hide();
-                    
-                
-                }
-            }
+               
+          }
             else
             {
                 MessageBox.Show("¡Contraseña incorrecta!", "Preparcial",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            /*  if(Admi==true){
-                  ocultar ventana form1
-                  mistrar ventana UserAdmi
-               }else{
-                  ocultar ventana form1
-                  mostrar ventana userCliente
-               }*/
             
         }catch(Exception exception){
             MessageBox.Show("ha ocurrido un error");
@@ -92,6 +79,13 @@ namespace Preparcial
     {
         if (e.KeyCode == Keys.Enter) ButtonIngresar_Click(sender, e);
     }
-    
+
+    private void Form1_Load(object sender, EventArgs e)
+    {
+        comboBox1.DataSource = null;
+        comboBox1.ValueMember = "IdUsuario";
+        comboBox1.DisplayMember = "Nombre";
+        comboBox1.DataSource = ConsultasUsuario.GetListaUsuarios();
+    }
   }
 }

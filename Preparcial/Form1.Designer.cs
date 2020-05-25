@@ -37,7 +37,7 @@
             this.Admi = new System.Windows.Forms.RadioButton();
             this.Cliente = new System.Windows.Forms.RadioButton();
             this.ButtonIngresar = new System.Windows.Forms.Button();
-            this.textnombre = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.LoginUser.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             this.LoginUser.Controls.Add(this.Admi, 0, 3);
             this.LoginUser.Controls.Add(this.Cliente, 1, 3);
             this.LoginUser.Controls.Add(this.ButtonIngresar, 0, 4);
-            this.LoginUser.Controls.Add(this.textnombre, 1, 1);
+            this.LoginUser.Controls.Add(this.comboBox1, 1, 1);
             this.LoginUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoginUser.Location = new System.Drawing.Point(3, 52);
             this.LoginUser.Name = "LoginUser";
@@ -152,13 +152,14 @@
             this.ButtonIngresar.UseVisualStyleBackColor = true;
             this.ButtonIngresar.Click += new System.EventHandler(this.ButtonIngresar_Click);
             // 
-            // textnombre
+            // comboBox1
             // 
-            this.textnombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textnombre.Location = new System.Drawing.Point(346, 37);
-            this.textnombre.Name = "textnombre";
-            this.textnombre.Size = new System.Drawing.Size(118, 20);
-            this.textnombre.TabIndex = 7;
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(318, 36);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(174, 21);
+            this.comboBox1.TabIndex = 7;
             // 
             // Form1
             // 
@@ -169,6 +170,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.LoginUser.ResumeLayout(false);
             this.LoginUser.PerformLayout();
@@ -178,12 +180,12 @@
         private System.Windows.Forms.RadioButton Admi;
         private System.Windows.Forms.Button ButtonIngresar;
         private System.Windows.Forms.RadioButton Cliente;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel LoginUser;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox textBoxContra;
-        private System.Windows.Forms.TextBox textnombre;
 
         #endregion
     }

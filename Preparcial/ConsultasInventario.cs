@@ -49,13 +49,13 @@ namespace Preparcial
                     ConexionBD.noQuery(sql);
                 }
                 
-                public static void ModificarStock(Inventario inv)
+                public static void ModificarStock(Inventario inv, int stock)
                 {
                     string sql = String.Format(
                         "UPDATE \"Inventario\"" +
                         "SET \"Stock\"={0}" +
                         "Where idinventario='{1}';",
-                        inv.Stock, inv.idInventario);
+                        stock, inv.idInventario);
 
                     ConexionBD.noQuery(sql);
                 }

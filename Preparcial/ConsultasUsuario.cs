@@ -39,7 +39,7 @@ namespace Preparcial
                 
             ConexionBD.noQuery(sql);
         }
-        public static bool ExisteUsuario(Usuario u)
+        public static bool ExisteUsuario(Usuario u, string contra, bool Admi)
         {
             string sql = "select * from \"Usuario\"";
 
@@ -49,8 +49,8 @@ namespace Preparcial
             foreach (DataRow fila in dt.Rows)
             {
                 if (fila[1].ToString().Equals(u.Nombre) &
-                    fila[2].ToString().Equals(u.Contra) &
-                    fila[3].ToString().Equals(u.Admi.ToString()) )
+                    fila[2].ToString().Equals(contra) &
+                    fila[3].ToString().Equals(Admi.ToString()) )
                 {
                     return true ;
                 }
@@ -92,13 +92,13 @@ namespace Preparcial
                 
             ConexionBD.noQuery(sql);
         }
-        public static void ModificarUsuario(Usuario u)
+        public static void ModificarUsuario(Usuario u, string contra, bool admi)
                         {
                             string sql = String.Format(
                                 "UPDATE \"Usuario\"" +
                                 "SET \"Contrasenia\"={0} \"Admi\"={1}" +
                                 "Where idinventario='{2}';",
-                                u.Contra, u.Admi,u.IdUsuario);
+                                contra, admi,u.IdUsuario);
         
                             ConexionBD.noQuery(sql);
                         }

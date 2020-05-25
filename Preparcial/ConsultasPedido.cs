@@ -27,22 +27,23 @@ namespace Preparcial
             return lista;
         }
         
-        public static void AgregarPedido(Pedido ped)
+        public static void AgregarPedido(Usuario u,Inventario inc, String cant)
         {
+            int cantidad = Convert.ToInt32(cant);
             string sql = String.Format(
                 "insert into \"Pedido\"" + 
                 "(\"IdUsuario\", \"IdInventario\", \"Cantidad\")" +
-                "values ('{0}', '{1}', '{2}');",
-                ped.IdUsuario, ped.IdInventario, ped.cantidad);
+                "values ('{0}', '{1}', {2});",
+                u.IdUsuario, inc.idInventario, cantidad);
                 
             ConexionBD.noQuery(sql);
         }
         
-        public static List<Pedido> PedidodeUsuario(Pedido pe)
+        public static List<Pedido> PedidodeUsuario(Usuario u)
         {
             string sql = String.Format("select idpedido, idusuario, idinventario, cantidad "+
                                        "from \"Pedido\"" +
-                                       "Where idpedido={0}", pe.IdUsuario);
+                                       "Where idusuario={0}", u.IdUsuario);
 
             DataTable dt = ConexionBD.Query(sql);
             

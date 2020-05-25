@@ -5,12 +5,14 @@ namespace Preparcial
 {
     public partial class UserAdmi : Form
     {
-       private Usuario Usu ;
+       private Usuario Usuario =new Usuario() ;
        private Inventario invent ;
 
         public UserAdmi(Usuario u)
         {
             InitializeComponent();
+           Usuario = u;
+           actualizarControles();
         }
 
 
@@ -25,11 +27,12 @@ namespace Preparcial
             {
                 try
                 {
-                    Usu.Nombre = tbtNombre.Text;
-                    Usu.Contra = tbtContra.Text;
-                    if (rbAdmi.Checked) Usu.Admi = true;
-                    else Usu.Admi = false;
-                    ConsultasUsuario.agregarUsuario(Usu);
+                    Usuario usu=new Usuario();
+                    usu.Nombre = tbtNombre.Text;
+                    usu.Contra = Encriptador.CrearMD5(tbtContra.Text);
+                    if (rbAdmi.Checked) usu.Admi = true;
+                    else usu.Admi = false;
+                    ConsultasUsuario.agregarUsuario(usu);
                 }
                 catch (Exception ex)
                 {
@@ -45,8 +48,9 @@ namespace Preparcial
                 if (MessageBox.Show("¿Seguro que desea eliminar al usuario " + cmbProductoConsulta.Text + "?", 
                     "Clase GUI 06", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Usu.Nombre = cmbProductoConsulta.Text;
-                    ConsultasUsuario.EliminarUsuario(Usu);
+                    Usuario elim = (Usuario) cmbProductoConsulta.SelectedItem;
+                    elim.Nombre = cmbProductoConsulta.Text;
+                    ConsultasUsuario.EliminarUsuario(elim);
                 
                     MessageBox.Show("¡Usuario eliminado exitosamente!", 
                         "Clase GUI 06", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -60,21 +64,13 @@ namespace Preparcial
 
             private void cmbProductoConsulta_SelectedIndexChanged(object sender, EventArgs e)
             {
-                Usuario U = (Usuario) cmbProductoConsulta.SelectedValue;
-                if (U.Admi)
-                {
-                    rbAdmi.Checked = true;
-                }
-                else
-                {
-                    rbCliente.Checked = true;
-                }
+                Usuario U = (Usuario) cmbProductoConsulta.SelectedItem;
             }
         
 
         private void UserAdmi_Load(object sender, EventArgs e)
         {
-        if (Usu.Admi)
+        if (Usuario.Admi)
         {
             // Los administradores si tienen acceso a esta informacion
 
@@ -94,10 +90,10 @@ namespace Preparcial
             // Realizar consulta a la base de datos
             List<Usuario> lista = ConsultasUsuario.GetListaUsuarios();
             List<Inventario> lista20 = ConsultasInventario.GetListaInventario();
-            
+            List<Pedido> pedidos = ConsultasPedido.GetListaPedido();
             // Tabla (data grid view)
             dgvPedidos.DataSource = null;
-            dgvPedidos.DataSource = lista;
+            dgvPedidos.DataSource = pedidos;
             // Menu desplegable (combo box)
             cmbProductoConsulta.DataSource = null;
             cmbProductoConsulta.ValueMember = "contrasena";
@@ -115,9 +111,13 @@ namespace Preparcial
 
         private void btModificar_Click(object sender, EventArgs e)
         {
-            Usu.Nombre = comboBox3.Text;
-            Usu.Contra = textBox1.Text;
-            ConsultasUsuario.ModificarUsuario(Usu);
+            Usuario Usu = (Usuario) comboBox3.SelectedItem;
+            
+             string Contra = textBox1.Text;
+             bool admi;
+             if (radioButton2.Checked) admi = true;
+             else admi = false;
+            ConsultasUsuario.ModificarUsuario(Usu, Contra, admi);
         }
 
         private void btnAlmacenarCliente_Click(object sender, EventArgs e)
@@ -131,11 +131,11 @@ namespace Preparcial
             {
                 try
                 {
+                    Inventario invent=new Inventario();
                     invent.Nombre = txtNombre.Text;
                     invent.Descrip = txtDescripcion.Text;
-                    // revisa que este bien que sea Length
-                    invent.Precio = txtPrecio.TextLength;
-                    invent.Stock = txtStock.TextLength;
+                    invent.Precio = Convert.ToInt32(txtPrecio.Text);
+                    invent.Stock = Convert.ToInt32(txtStock.Text);
                     ConsultasInventario.AgregarInventario(invent);
                  
                 }
@@ -150,21 +150,16 @@ namespace Preparcial
 
         private void btnAlmacenarProducto_Click(object sender, EventArgs e)
         {
-            invent.Nombre = comboBox1.Text;
-            invent.Stock = txtNewstock.TextLength;
-            ConsultasInventario.ModificarStock(invent);
+            Inventario invent = (Inventario) comboBox1.SelectedItem;
+
+            int Stock = Convert.ToInt32(txtNewstock.Text);
+            ConsultasInventario.ModificarStock(invent, Stock);
         }
 
-       
-
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-           /* throw new System.NotImplementedException();*/
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            invent.Nombre = comboBox2.Text;
+            Inventario invent = (Inventario) comboBox1.SelectedItem;
             ConsultasInventario.EliminarInventario(invent);
         }
     }

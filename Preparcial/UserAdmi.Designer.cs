@@ -154,7 +154,6 @@ namespace Preparcial
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Usuarios";
             this.tabPage1.UseVisualStyleBackColor = true;
-           
             // 
             // label29
             // 
@@ -563,7 +562,6 @@ namespace Preparcial
             this.groupBox4.Size = new System.Drawing.Size(583, 129);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // label12
             // 

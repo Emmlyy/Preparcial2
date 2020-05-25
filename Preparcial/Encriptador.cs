@@ -32,7 +32,6 @@ namespace Preparcial
 
             // Create a StringComparer an compare the hashes.
             StringComparer comparer = StringComparer.OrdinalIgnoreCase;
-
             return (0 == comparer.Compare(hashOfInput, pMD5));
         }
     }
