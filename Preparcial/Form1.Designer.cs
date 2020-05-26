@@ -37,7 +37,7 @@
             this.Admi = new System.Windows.Forms.RadioButton();
             this.Cliente = new System.Windows.Forms.RadioButton();
             this.ButtonIngresar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboUsuario = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.LoginUser.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             this.LoginUser.Controls.Add(this.Admi, 0, 3);
             this.LoginUser.Controls.Add(this.Cliente, 1, 3);
             this.LoginUser.Controls.Add(this.ButtonIngresar, 0, 4);
-            this.LoginUser.Controls.Add(this.comboBox1, 1, 1);
+            this.LoginUser.Controls.Add(this.comboUsuario, 1, 1);
             this.LoginUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoginUser.Location = new System.Drawing.Point(3, 52);
             this.LoginUser.Name = "LoginUser";
@@ -152,14 +152,14 @@
             this.ButtonIngresar.UseVisualStyleBackColor = true;
             this.ButtonIngresar.Click += new System.EventHandler(this.ButtonIngresar_Click);
             // 
-            // comboBox1
+            // comboUsuario
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(318, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 21);
-            this.comboBox1.TabIndex = 7;
+            this.comboUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboUsuario.FormattingEnabled = true;
+            this.comboUsuario.Location = new System.Drawing.Point(318, 36);
+            this.comboUsuario.Name = "comboUsuario";
+            this.comboUsuario.Size = new System.Drawing.Size(174, 21);
+            this.comboUsuario.TabIndex = 7;
             // 
             // Form1
             // 
@@ -180,7 +180,7 @@
         private System.Windows.Forms.RadioButton Admi;
         private System.Windows.Forms.Button ButtonIngresar;
         private System.Windows.Forms.RadioButton Cliente;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel LoginUser;

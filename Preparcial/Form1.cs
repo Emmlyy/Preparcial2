@@ -19,16 +19,17 @@ namespace Preparcial
         {
             InitializeComponent();
         }
+    
+   
     Usuario AD = new Usuario();
     private void ButtonIngresar_Click(object sender, EventArgs e)
     {
-        try
-        {if (Encriptador.CompararMD5(textBoxContra.Text,comboBox1.SelectedValue.ToString()))
-            {
+       
+       try {
 
-            Usuario us = (Usuario) comboBox1.SelectedItem;
+            Usuario us = (Usuario) comboUsuario.SelectedItem;
                 
-                string Contra = Encriptador.CrearMD5(textBoxContra.Text);
+                string Contra = textBoxContra.Text;
                 bool admi;
                 if (Admi.Checked) admi = true;
                 else admi = false;
@@ -56,13 +57,7 @@ namespace Preparcial
                     MessageBox.Show("no existe el Usuario o algun dato esta malo");
                 }
                
-          }
-            else
-            {
-                MessageBox.Show("¡Contraseña incorrecta!", "Preparcial",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
+                
             
         }catch(Exception exception){
             MessageBox.Show("ha ocurrido un error");
@@ -82,10 +77,15 @@ namespace Preparcial
 
     private void Form1_Load(object sender, EventArgs e)
     {
-        comboBox1.DataSource = null;
-        comboBox1.ValueMember = "IdUsuario";
-        comboBox1.DisplayMember = "Nombre";
-        comboBox1.DataSource = ConsultasUsuario.GetListaUsuarios();
+        poblarControles();
+    }
+
+    private void poblarControles()
+    {
+        comboUsuario.DataSource = null;
+        comboUsuario.ValueMember = "IdUsuario";
+        comboUsuario.DisplayMember = "Nombre";
+        comboUsuario.DataSource = ConsultasUsuario.GetListaUsuarios();
     }
   }
 }

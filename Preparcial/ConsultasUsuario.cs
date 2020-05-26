@@ -10,7 +10,7 @@ namespace Preparcial
     {
         public static List<Usuario> GetListaUsuarios()
         {
-            string sql = "select * from \"Usuario\"";
+            string sql = "select * from Usuario";
 
             DataTable dt = ConexionBD.Query(sql);
             

@@ -6,8 +6,15 @@ namespace Preparcial
 {
     public static class ConexionBD{
 
-    private static string CadenaConexion = 
-            "Server=127.0.0.1;Port=5432;UserId=postgres;Password=292062A4;Database=Preparcial2";
+    private static string CadenaConexion =@"
+            Host=127.0.0.1;
+            Port=5432;
+            Username=postgres;
+            Password=UCA;
+            Database=preParcial
+            ";
+    
+    
         
         public static DataTable Query(string sql)
         {
