@@ -33,7 +33,7 @@ namespace Preparcial
         {
             string sql = String.Format(
                 "insert into \"USUARIO\"" + 
-                "(\"Nombre\", \"Contrasenia\", \"Admi\")" +
+                "(\"nombre\", \"contrasenia\", \"admi\")" +
                 "values ('{0}', '{1}', '{2}');",
                 c.Nombre, c.Contra, c.Admi);
                 
@@ -41,7 +41,7 @@ namespace Preparcial
         }
         public static bool ExisteUsuario(Usuario u, string contra, bool Admi)
         {
-            string sql = "select * from \"Usuario\"";
+            string sql = "select * from \"USUARIO\"";
 
             DataTable dt = ConexionBD.Query(sql);
             
@@ -62,7 +62,7 @@ namespace Preparcial
 
         public static int GetIdUsuario(Usuario u)
         {
-            string sql = "select * from \"Usuario\"";
+            string sql = "select * from \"USUARIO\"";
 
             DataTable dt = ConexionBD.Query(sql);
             
@@ -87,7 +87,7 @@ namespace Preparcial
         {
             string sql = String.Format(
                 "delete from \"USUARIO\"" +
-                "Where idusuario='{0}';",
+                "Where idUsuario='{0}';",
                 c.IdUsuario);
                 
             ConexionBD.noQuery(sql);
@@ -95,9 +95,9 @@ namespace Preparcial
         public static void ModificarUsuario(Usuario u, string contra, bool admi)
                         {
                             string sql = String.Format(
-                                "UPDATE \"Usuario\"" +
-                                "SET \"Contrasenia\"={0} \"Admi\"={1}" +
-                                "Where idinventario='{2}';",
+                                "UPDATE \"USUARIO\"" +
+                                "SET \"contrasenia\"={0} \"admi\"={1}" +
+                                "Where idInventario='{2}';",
                                 contra, admi,u.IdUsuario);
         
                             ConexionBD.noQuery(sql);

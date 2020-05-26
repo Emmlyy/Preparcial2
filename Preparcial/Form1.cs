@@ -18,6 +18,7 @@ namespace Preparcial
     public Form1()
         {
             InitializeComponent();
+            poblarControles();
         }
     
    
@@ -25,11 +26,25 @@ namespace Preparcial
     private void ButtonIngresar_Click(object sender, EventArgs e)
     {
        
-       try {
+       try {if (Encriptador.CompararMD5(textBoxContra.Text,comboUsuario.SelectedValue.ToString()))
+            {
 
             Usuario us = (Usuario) comboUsuario.SelectedItem;
-                
-                string Contra = textBoxContra.Text;
+            if (us.Admi)
+            {
+                MessageBox.Show("¡Bienvenido!", 
+                    "semana 09 ejercicio 01", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                UserAdmi ventana = new UserAdmi(us);
+                ventana.Show();
+                this.Hide();
+            }
+            else
+                MessageBox.Show("Su cuenta se encuentra inactiva, favor hable con el administrador", 
+                    "semana 09 ejercicio 01", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
+                /*
+                string Contra = Encriptador.CrearMD5(textBoxContra.Text);
                 bool admi;
                 if (Admi.Checked) admi = true;
                 else admi = false;
@@ -55,9 +70,15 @@ namespace Preparcial
                 else
                 {
                     MessageBox.Show("no existe el Usuario o algun dato esta malo");
-                }
+                }*/
                
-                
+          }
+            else
+            {
+                MessageBox.Show("¡Contraseña incorrecta!", "Preparcial",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
             
         }catch(Exception exception){
             MessageBox.Show("ha ocurrido un error");
@@ -83,9 +104,13 @@ namespace Preparcial
     private void poblarControles()
     {
         comboUsuario.DataSource = null;
-        comboUsuario.ValueMember = "IdUsuario";
+        comboUsuario.ValueMember = "Contra";
         comboUsuario.DisplayMember = "Nombre";
         comboUsuario.DataSource = ConsultasUsuario.GetListaUsuarios();
+    }
+    private void textboxContra_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyCode == Keys.Enter) ButtonIngresar_Click(sender, e);
     }
   }
 }

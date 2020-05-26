@@ -29,7 +29,7 @@ namespace Preparcial
                 {
                     Usuario usu=new Usuario();
                     usu.Nombre = tbtNombre.Text;
-                    usu.Contra = tbtContra.Text;
+                    usu.Contra = Encriptador.CrearMD5(tbtContra.Text);
                     if (rbAdmi.Checked) usu.Admi = true;
                     else usu.Admi = false;
                     ConsultasUsuario.agregarUsuario(usu);
@@ -46,7 +46,7 @@ namespace Preparcial
         private void btEliminar_Click(object sender, EventArgs e)
             {
                 if (MessageBox.Show("¿Seguro que desea eliminar al usuario " + cmbProductoConsulta.Text + "?", 
-                    "preParcial", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    "Clase GUI 06", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Usuario elim = (Usuario) cmbProductoConsulta.SelectedItem;
                     elim.Nombre = cmbProductoConsulta.Text;
@@ -96,11 +96,11 @@ namespace Preparcial
             dgvPedidos.DataSource = pedidos;
             // Menu desplegable (combo box)
             cmbProductoConsulta.DataSource = null;
-            cmbProductoConsulta.ValueMember = "contrasena";
+            cmbProductoConsulta.ValueMember = "contrasenia";
             cmbProductoConsulta.DisplayMember = "usuario";
             cmbProductoConsulta.DataSource = lista;
             comboBox3.DataSource = null;
-            comboBox3.ValueMember = "contrasena";
+            comboBox3.ValueMember = "contrasenia";
             comboBox3.DisplayMember = "usuario";
             comboBox3.DataSource = lista;
             comboBox1.DataSource = null;

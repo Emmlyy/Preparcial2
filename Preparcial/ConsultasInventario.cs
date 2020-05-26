@@ -8,7 +8,7 @@ namespace Preparcial
     {
         public static List<Inventario> GetListaInventario()
                 {
-                    string sql = "select * from \"Inventario\"";
+                    string sql = "select * from \"INVENTARIO\"";
         
                     DataTable dt = ConexionBD.Query(sql);
                     
@@ -30,8 +30,8 @@ namespace Preparcial
                 public static void AgregarInventario(Inventario inv)
                 {
                     string sql = String.Format(
-                        "insert into \"Inventario\"" + 
-                        "(\"Nombre\", \"Descripcion\", \"Precio\", \"Stock\")" +
+                        "insert into \"INVENTARIO\"" + 
+                        "(\"nombre\", \"descripcion\", \"precio\", \"stock\")" +
                         "values ('{0}', '{1}', '{2}', '{3}');",
                         inv.Nombre, inv.Descrip, inv.Precio, inv.Stock);
                         
@@ -42,8 +42,8 @@ namespace Preparcial
                 public static void EliminarInventario(Inventario inv)
                 {
                     string sql = String.Format(
-                        "delete from \"Inventario\"" +
-                        "Where idinventario='{0}';",
+                        "delete from \"INVENTARIO\" " +
+                        "Where idInventario='{0}';",
                         inv.idInventario);
                         
                     ConexionBD.noQuery(sql);
@@ -52,9 +52,9 @@ namespace Preparcial
                 public static void ModificarStock(Inventario inv, int stock)
                 {
                     string sql = String.Format(
-                        "UPDATE \"Inventario\"" +
-                        "SET \"Stock\"={0}" +
-                        "Where idinventario='{1}';",
+                        "UPDATE \"INVENTARIO\"" +
+                        "SET \"stock\"={0}" +
+                        "Where idInventario='{1}';",
                         stock, inv.idInventario);
 
                     ConexionBD.noQuery(sql);

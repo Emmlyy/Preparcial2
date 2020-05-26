@@ -62,6 +62,7 @@
         <Compile Include="ConsultasInventario.cs" />
         <Compile Include="ConsultasPedido.cs" />
         <Compile Include="ConsultasUsuario.cs" />
+        <Compile Include="Encriptador.cs" />
         <Compile Include="Form1.cs">
             <SubType>Form</SubType>
         </Compile>

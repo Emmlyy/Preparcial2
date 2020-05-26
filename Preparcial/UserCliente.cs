@@ -22,8 +22,8 @@ namespace Preparcial
             dataGridView1.DataSource = ConsultasPedido.PedidodeUsuario(user);
             
             cmbProductoPedido.DataSource = null;
-            cmbProductoPedido.ValueMember = "idpedido";
-            cmbProductoPedido.DisplayMember = "Nombre";
+            cmbProductoPedido.ValueMember = "idPedido";
+            cmbProductoPedido.DisplayMember = "nombre";
             cmbProductoPedido.DataSource = ConsultasInventario.GetListaInventario();
 
             lblNombre.Text = user.Nombre;
