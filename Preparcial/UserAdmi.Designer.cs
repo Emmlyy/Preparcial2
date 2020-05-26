@@ -31,11 +31,10 @@ namespace Preparcial
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAdmi));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.btModificar = new System.Windows.Forms.Button();
@@ -60,13 +59,11 @@ namespace Preparcial
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label20 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label21 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -93,10 +90,11 @@ namespace Preparcial
             this.lbStock = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -110,6 +108,8 @@ namespace Preparcial
             this.tabPage4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.dgvPedidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -118,12 +118,15 @@ namespace Preparcial
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel1.Controls.Add(this.tabControl1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(620, 523);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -142,8 +145,6 @@ namespace Preparcial
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label29);
-            this.tabPage1.Controls.Add(this.label28);
             this.tabPage1.Controls.Add(this.groupBox7);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
@@ -155,25 +156,9 @@ namespace Preparcial
             this.tabPage1.Text = "Usuarios";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label29
-            // 
-            this.label29.Location = new System.Drawing.Point(20, 272);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(141, 23);
-            this.label29.TabIndex = 15;
-            this.label29.Text = "Modificar usuario";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label28
-            // 
-            this.label28.Location = new System.Drawing.Point(14, 152);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(125, 23);
-            this.label28.TabIndex = 15;
-            this.label28.Text = "Eliminar usuario";
-            // 
             // groupBox7
             // 
+            this.groupBox7.BackColor = System.Drawing.Color.LightCyan;
             this.groupBox7.Controls.Add(this.comboBox3);
             this.groupBox7.Controls.Add(this.btModificar);
             this.groupBox7.Controls.Add(this.textBox1);
@@ -182,11 +167,12 @@ namespace Preparcial
             this.groupBox7.Controls.Add(this.radioButton2);
             this.groupBox7.Controls.Add(this.label5);
             this.groupBox7.Controls.Add(this.label6);
-            this.groupBox7.Location = new System.Drawing.Point(14, 289);
+            this.groupBox7.Location = new System.Drawing.Point(14, 276);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(573, 131);
             this.groupBox7.TabIndex = 2;
             this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "modificar usuario";
             // 
             // comboBox3
             // 
@@ -260,14 +246,16 @@ namespace Preparcial
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.LightCyan;
             this.groupBox2.Controls.Add(this.btEliminar);
             this.groupBox2.Controls.Add(this.cmbProductoConsulta);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(14, 169);
+            this.groupBox2.Location = new System.Drawing.Point(14, 155);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(573, 100);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Eliminar Usuario";
             // 
             // btEliminar
             // 
@@ -299,6 +287,7 @@ namespace Preparcial
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.LightCyan;
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.btCrear);
             this.groupBox1.Controls.Add(this.tbtContra);
@@ -313,6 +302,7 @@ namespace Preparcial
             this.groupBox1.Size = new System.Drawing.Size(573, 130);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Crear usuario";
             // 
             // label25
             // 
@@ -393,12 +383,9 @@ namespace Preparcial
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.groupBox6);
-            this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -407,17 +394,9 @@ namespace Preparcial
             this.tabPage2.Text = "Inventario";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label20
-            // 
-            this.label20.Location = new System.Drawing.Point(13, 284);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(92, 18);
-            this.label20.TabIndex = 26;
-            this.label20.Text = "Eliminar producto";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // groupBox6
             // 
+            this.groupBox6.BackColor = System.Drawing.Color.LightCyan;
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.comboBox2);
             this.groupBox6.Controls.Add(this.button1);
@@ -427,6 +406,7 @@ namespace Preparcial
             this.groupBox6.Size = new System.Drawing.Size(586, 115);
             this.groupBox6.TabIndex = 32;
             this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Eliminar Producto";
             // 
             // label21
             // 
@@ -463,17 +443,9 @@ namespace Preparcial
             this.label22.Size = new System.Drawing.Size(60, 23);
             this.label22.TabIndex = 16;
             // 
-            // label13
-            // 
-            this.label13.Location = new System.Drawing.Point(17, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(162, 20);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "crear nuevo  Producto";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.LightCyan;
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.comboBox1);
@@ -485,6 +457,7 @@ namespace Preparcial
             this.groupBox3.Size = new System.Drawing.Size(586, 115);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Modificar stock";
             // 
             // label19
             // 
@@ -539,6 +512,7 @@ namespace Preparcial
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.LightCyan;
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.label10);
@@ -562,6 +536,7 @@ namespace Preparcial
             this.groupBox4.Size = new System.Drawing.Size(583, 129);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Crear Producto";
             // 
             // label12
             // 
@@ -700,15 +675,6 @@ namespace Preparcial
             this.label27.Size = new System.Drawing.Size(60, 23);
             this.label27.TabIndex = 2;
             // 
-            // label14
-            // 
-            this.label14.Location = new System.Drawing.Point(23, 148);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(133, 22);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Modificar Stock";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.groupBox5);
@@ -739,11 +705,33 @@ namespace Preparcial
             this.dgvPedidos.Size = new System.Drawing.Size(549, 300);
             this.dgvPedidos.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(149, 72);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Location = new System.Drawing.Point(158, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(459, 72);
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
             // UserAdmi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(620, 523);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Location = new System.Drawing.Point(15, 15);
@@ -766,6 +754,8 @@ namespace Preparcial
             this.tabPage4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.dgvPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
         }
 
@@ -791,15 +781,12 @@ namespace Preparcial
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
@@ -807,8 +794,6 @@ namespace Preparcial
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -818,6 +803,8 @@ namespace Preparcial
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbPrecio;
         private System.Windows.Forms.Label lbStock;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton rbAdmi;
